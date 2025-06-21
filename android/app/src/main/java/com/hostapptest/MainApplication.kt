@@ -1,4 +1,4 @@
-package com.miniapptest
+package com.hostAppTest
 
 import android.app.Application
 import com.facebook.react.PackageList

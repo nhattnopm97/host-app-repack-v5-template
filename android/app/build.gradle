@@ -77,9 +77,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.miniapptest"
+    namespace "com.hostAppTest"
     defaultConfig {
-        applicationId "com.miniapptest"
+        applicationId "com.hostAppTest"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
