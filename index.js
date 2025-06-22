@@ -3,7 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import App from './App';
+import App from './src/App';
 import {name as appName} from './app.json';
 import {ScriptManager} from '@callstack/repack/client';
 if (!__DEV__) {

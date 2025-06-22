@@ -3,8 +3,11 @@ import {NavigationContainer} from '@react-navigation/native';
 
 // import {checkVersion} from 'react-native-check-version';
 import {useEffect, useState} from 'react';
-import MiniAppContainer from './src/navigation';
+import MiniAppContainer from './navigation';
+import React from 'react';
+import {View} from 'react-native';
 
+const MiniAppScreen = React.lazy(() => import('miniApp/CtnMini'));
 function App() {
   const [visible, setVisible] = useState(false);
 
@@ -26,9 +29,9 @@ function App() {
   // };
   return (
     <SafeAreaProvider>
-      <NavigationContainer>
-        <MiniAppContainer />
-      </NavigationContainer>
+      <React.Suspense fallback={<View></View>}>
+        <MiniAppScreen />
+      </React.Suspense>
     </SafeAreaProvider>
   );
 }
