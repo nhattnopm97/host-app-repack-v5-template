@@ -42,12 +42,43 @@ export default env => {
         name: 'hostAppTest',
         dts: false,
         remotes: {
-          miniApp: `miniApp@http://127.0.0.1:9000/${platform}/mf-manifest.json`,
-          // miniApp: `miniApp@https://raw.githubusercontent.com/nhattnopm97/home-nail-build/refs/heads/main/generated/${platform}/mf-manifest.json`,
+          // miniApp: `miniApp@http://127.0.0.1:9000/${platform}/mf-manifest.json`,
+          miniApp: `miniApp@https://github.com/nhattnopm97/home-nail-build/raw/refs/heads/main/generated/${platform}/mf-manifest.json`,
           //   booking: `booking@http://localhost:9000/${platform}/mf-manifest.json`,
         },
         shared: {
-          ...getSharedDependencies({eager: true}),
+          react: {singleton: true, eager: true, requiredVersion: '19.0.0'},
+          'react-native': {
+            singleton: true,
+            eager: true,
+            requiredVersion: '0.78.2',
+          },
+          '@react-native-async-storage/async-storage': {
+            singleton: true,
+            eager: true,
+            requiredVersion: '2.0.0',
+          },
+          '@react-navigation/native': {
+            singleton: true,
+            eager: true,
+            requiredVersion: '7.0.14',
+          },
+          '@react-navigation/native-stack': {
+            singleton: true,
+            eager: true,
+            requiredVersion: '7.2.0',
+          },
+          zustand: {singleton: true, eager: true, requiredVersion: '5.0.5'},
+          'react-native-safe-area-context': {
+            singleton: true,
+            eager: true,
+            requiredVersion: '5.3.0',
+          },
+          'react-native-screens': {
+            singleton: true,
+            eager: true,
+            requiredVersion: '4.10.0',
+          },
         },
       }),
       // silence missing @react-native-masked-view optionally required by @react-navigation/elements
