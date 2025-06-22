@@ -17,6 +17,10 @@ end
 target 'hostAppTest' do
   config = use_native_modules!
 
+  # add config firebase
+  use_frameworks! :linkage => :static
+  $RNFirebaseAsStaticFramework = true
+
   use_react_native!(
     :path => config[:reactNativePath],
     # An absolute path to your application root.
