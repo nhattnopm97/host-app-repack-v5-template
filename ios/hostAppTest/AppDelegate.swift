@@ -19,6 +19,17 @@ class AppDelegate: RCTAppDelegate {
 
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
+  
+  override func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+    let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
+    let token = tokenParts.joined()
+    print("✅ [AppDelegate] APNs Token Received: \(token)") // Log này sẽ hiện ở console của Xcode
+    // Firebase sẽ tự động xử lý token này tiếp
+  }
+
+  override func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+    print("❌ [AppDelegate] Failed to register for remote notifications with error: \(error)") // Log này sẽ hiện ở console của Xcode
+  }
 
   override func sourceURL(for bridge: RCTBridge) -> URL? {
     self.bundleURL()

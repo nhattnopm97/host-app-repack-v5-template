@@ -43,7 +43,7 @@ export default env => {
         dts: false,
         remotes: {
           miniApp: `miniApp@http://127.0.0.1:9000/${platform}/mf-manifest.json`,
-          // miniApp: `miniApp@https://raw.githubusercontent.com/nhattnopm97/home-nail-build/refs/heads/main/generated/${platform}/mf-manifest.json`,
+          // miniApp: `miniApp@https://github.com/nhattnopm97/home-nail-build/raw/refs/heads/main/generated/${platform}/mf-manifest.json`,
           //   booking: `booking@http://localhost:9000/${platform}/mf-manifest.json`,
         },
         shared: {
